@@ -31,6 +31,15 @@ class AulasComponent extends HTMLElement {
         <div>
           ${aulasDia.map(a => {
             let provaDisplay = a.prova_alert ? '' : 'display: none;';
+            // altera cor dinamicamente
+            let corNota;
+            if (a.nota < 6) {
+              corNota = '#e21212'; // vermelho
+            } else if (a.nota < 8) {
+              corNota = '#e2a312'; // laranja
+            } else {
+              corNota = '#12e212'; // verde
+            }
             return `
               <div class="comp-aula">
                 <div class="lable-prova p_lable" style="${provaDisplay}">PROVA: <b>${a.prova}</b></div>
@@ -38,7 +47,7 @@ class AulasComponent extends HTMLElement {
                 <p class="p">Local e Horário: <b>${a.local} - ${a.horario}</b></p>
                 <div class="lables">
                   <div class="lable-frequencia p_lable">FALTAS: <b>${a.frequencia}</b></div>
-                  <div class="lable-nota p_lable">CR: <b>${a.nota}</b></div>
+                  <div class="lable-nota p_lable" style="background-color: ${corNota};">CR: <b>${a.nota}</b></div>
                 </div>
               </div>
             `;
@@ -48,4 +57,4 @@ class AulasComponent extends HTMLElement {
     }
   }
   
-  customElements.define('aulas-component', AulasComponent);  
+  customElements.define('aulas-component', AulasComponent);

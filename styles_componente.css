@@ -1,6 +1,5 @@
 :root {
   --frequencia: #126ae2;
-  --nota: #126ae2;
   --prova: #126ae2;  
 }
 
@@ -20,7 +19,6 @@
   .lable-prova,
   .lable-frequencia,
   .lable-nota {
-    background-color: var(--prova);
     padding: 7px 15px;
     margin-bottom: 10px;
     border-radius: 500px;
@@ -28,12 +26,12 @@
     margin-right: 10px;
   }
   
-  .lable-frequencia {
-    background-color: var(--frequencia);
+  .lable-prova {
+    background-color: var(--prova);
   }
   
-  .lable-nota {
-    background-color: var(--nota);
+  .lable-frequencia {
+    background-color: var(--frequencia);
   }
   
   .p_lable {
@@ -43,4 +41,3 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
